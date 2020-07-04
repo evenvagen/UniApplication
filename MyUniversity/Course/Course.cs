@@ -8,16 +8,16 @@ namespace MyUniversity
     {
         public int? IdCourse { get; private set; }
         public string Class { get; private set; }
-        public int Participants { get; private set; }
 
-        public List<Student> Students;
+        public List<Student> Participants;
 
-        public Course(int? idCourse, string @class, int participants)
+        public Course(int? idCourse, string @class)
         {
             IdCourse = idCourse;
             Class = @class;
-            Participants = participants;
         }
+
+
 
 
         public string CourseInfo()
