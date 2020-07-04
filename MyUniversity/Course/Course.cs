@@ -7,14 +7,17 @@ namespace MyUniversity
     public class Course
     {
         public int? IdCourse { get; private set; }
-        public string Class { get; private set; }
+        public string Coursed { get; private set; }
 
-        public List<Student> Participants;
+        public int Participants;
 
-        public Course(int? idCourse, string @class)
+        public List<Student> Students;
+
+        public Course(int? idCourse, string course, int participants)
         {
             IdCourse = idCourse;
-            Class = @class;
+            Coursed = course;
+            Participants = participants;
         }
 
 
@@ -22,7 +25,7 @@ namespace MyUniversity
 
         public string CourseInfo()
         {
-            var courseDescription = $"{IdCourse}: {Class}, deltagere: {Participants}\n\n";
+            var courseDescription = $"{IdCourse}: {Coursed}, deltagere: {Participants}\n\n";
             return courseDescription;
         }
 

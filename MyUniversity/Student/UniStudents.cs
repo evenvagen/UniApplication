@@ -18,12 +18,12 @@ namespace MyUniversity
 
 
 
-        public void ListStudents(UniCourses c)
+        public void ListStudents()
         {
             var i = "";
             foreach (var student in Students)
             {
-                i += student.StudentInfo(c);
+                i += student.StudentInfo();
             }
             App.WriteL(i);
         }

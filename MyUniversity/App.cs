@@ -36,51 +36,55 @@ namespace MyUniversity
                 
                 var c = Console.ReadLine();
 
-                if (c == "hjelp") HelpResponse();
-                
-
-                if (c == "ny student")
+                switch (c)
                 {
-                    var s = new Student().CreateStudent();
-                    students.Students.Add(s);
-                    WriteL("Student lagt til");
-                    Thread.Sleep(700);
-                    ClearConsole();
-                }
-
-                if (c == "fjern student")
-                {
-                    var q = AskForId();
-
-                    foreach (var student in students.Students.Where(student => q == student.Id.ToString()))
+                    case "hjelp":
+                        HelpResponse();
+                        break;
+                    case "ny student":
                     {
-                        students.Students.Remove(student);
-                        WriteL("Student fjernet");
+                        var s = new Student().CreateStudent();
+                        students.Students.Add(s);
+                        WriteL("Student lagt til");
                         Thread.Sleep(700);
                         ClearConsole();
                         break;
                     }
-                }
-
-                if (c == "vis student")
-                {
-
-                    foreach (var student in students.Students)
+                    case "fjern student":
                     {
                         var q = AskForId();
 
-                        var st = student.Id;
-                        if (q == st.ToString()) WriteL(student.StudentInfo(courses));
+                        foreach (var student in students.Students.Where(student => q == student.Id.ToString()))
+                        {
+                            students.Students.Remove(student);
+                            WriteL("Student fjernet");
+                            Thread.Sleep(700);
+                            ClearConsole();
+                            break;
+                        }
+
+                        break;
                     }
+                    case "vis student":
+                    {
+                        foreach (var student in students.Students)
+                        {
+                            var q = AskForId();
+
+                            var st = student.Id;
+                            if (q == st.ToString()) WriteL(student.StudentInfo());
+                        }
+
+                        break;
+                    }
+                    case "vis studenter":
+                        students.ListStudents();
+                        break;
+                    case "vis kurs":
+                        courses.ShowAllCourses();
+                        break;
                 }
 
-
-                if (c == "vis studenter") students.ListStudents(courses);
-                
-
-
-                if (c == "vis kurs") courses.ShowAllCourses();
-                
 
                 if (c == "exit") break;
             }
