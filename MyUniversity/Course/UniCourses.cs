@@ -13,7 +13,7 @@ namespace MyUniversity
             Courses = new List<Course>(courses);
         }
 
-        public void ShowAllCourses()
+        public string ShowAllCourses()
         {
             var i = "";
             foreach (var course in Courses)
@@ -21,7 +21,7 @@ namespace MyUniversity
                 i += course.CourseInfo();
             }
 
-            App.WriteL(i);
+            return i;
         }
 
     }

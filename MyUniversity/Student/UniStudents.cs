@@ -11,21 +11,23 @@ namespace MyUniversity
     {
         public List<Student> Students { get; set; }
 
-        public UniStudents(Student[] student)
+        public UniStudents(params Student[] student)
         { 
             Students = new List<Student>(student);
         }
 
 
 
-        public void ListStudents()
+        public string ListStudents()
         {
             var i = "";
+
             foreach (var student in Students)
             {
                 i += student.StudentInfo();
             }
-            App.WriteL(i);
+
+            return i;
         }
 
 
