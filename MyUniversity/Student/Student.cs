@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace MyUniversity
 {
@@ -7,10 +8,10 @@ namespace MyUniversity
     {
         public string Name { get; private set; }
         public string Email { get; private set; }
-        public Guid Id;
+        public int Id;
         public List<Course> Courses;
 
-        public Student(string name, string email, Guid id)
+        public Student(string name, string email, int id)
         {
             Name = name;
             Email = email;
@@ -20,7 +21,7 @@ namespace MyUniversity
 
         public string StudentInfo()
         {
-            var studentOutput =  $"{Name}({Id}), {Email}\n{Courses}\n\n";
+            var studentOutput =  $"{Name}({Id}), {Email}\n\n";
             return studentOutput;
         }
 
@@ -31,7 +32,7 @@ namespace MyUniversity
         }
 
 
-        public Student CreateStudent()
+        public Student CreateStudent(UniStudents students)
         {
             Console.WriteLine("Lag en ny student!");
 
@@ -39,8 +40,14 @@ namespace MyUniversity
 
             var email = App.Ask("E-post: ");
 
-            return new Student(name, email, Guid.NewGuid());
+            return new Student(name, email, IdLoop(students));
+        }
 
+
+        public static int IdLoop(UniStudents students)
+        {
+            
+            return students.Students.Count + 1;
         }
 
 
