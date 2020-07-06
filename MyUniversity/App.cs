@@ -53,33 +53,22 @@ namespace MyUniversity
 
                     case "fjern student":
                     {
-                        var q = AskForId();
-
-                        foreach (var student in students.Students.Where(student => q == student.Id.ToString()))
-                        {
-                            students.Students.Remove(student);
-                            WriteL($"Student {student.Id} fjernet");
-                            break;
-                        }
-                        break;
+                       var q = AskNum("Student-id: "); 
+                       WriteL(students.RemoveStudent(q)); 
+                       break;
                     }
                         
-                      
-                    case "vis studenter": students.ListStudents(); break;
+                    
+                    case "vis kurs": WriteL(courses.ShowAllCourses()); break;
 
-                    case "vis kurs": courses.ShowAllCourses(); break;
+                    case "vis studenter": WriteL(students.ListStudents()); break;
                 }
 
 
                 if (command == "vis student")
                 {
-                    var q = AskForId();
-
-                    foreach (var student in students.Students)
-                    {
-                        var st = student.Id;
-                        if (q == st.ToString()) WriteL(student.StudentInfo());
-                    }
+                    var q = AskNum("Student-id: ");
+                    WriteL(students.FindStudent(q));
                 }
 
 
@@ -88,11 +77,11 @@ namespace MyUniversity
 
         }
 
-
-
-        public static string AskForId()
+        public static int AskNum(string question)
         {
-            return Ask("Student-id: ");
+            Console.Write(question);
+            var id = Convert.ToInt32(Console.ReadLine());
+            return id;
         }
 
         public static string Ask(string question)

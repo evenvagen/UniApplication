@@ -38,14 +38,28 @@ namespace UniTests
         public void RemoveStudent()
         {
             var st1 = new Student("Jolene", "jolene@gmail.com", 1);
-            var st2 = new Student("John", "john@gmail.com", 2);
+            var st2 = new Student("John", "john@gmail.com", 8);
             var st3 = new Student("Christian", "christian@gmail.com", 3);
 
             var students = new UniStudents(st1, st2, st3);
 
-            var actual = students.RemoveStudent(2);
+            var actual = students.RemoveStudent(8);
 
-            Assert.AreEqual("student 2 fjernet", actual);
+            Assert.AreEqual("student 8 fjernet", actual);
+        }
+
+        [Test]
+        public void SearchForStudent()
+        {
+            var st1 = new Student("Jolene", "jolene@gmail.com", 83);
+            var st2 = new Student("John", "john@gmail.com", 33);
+
+            var students = new UniStudents(st1, st2);
+
+            var actual = students.FindStudent(33);
+
+            Assert.AreEqual("John(33), john@gmail.com\n\n", actual);
+
         }
     }
 }

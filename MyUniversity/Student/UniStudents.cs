@@ -42,5 +42,15 @@ namespace MyUniversity
 
             return i;
         }
+
+        public string FindStudent(int id)
+        {
+            string i = "";
+            foreach (var student in Students.Where(s => s.Id == id).ToList())
+            {
+                if (student.Id.ToString() == id.ToString()) i += student.StudentInfo();
+            }
+            return i;
+        }
     }
 }
