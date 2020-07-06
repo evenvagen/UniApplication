@@ -58,7 +58,7 @@ namespace MyUniversity
                         foreach (var student in students.Students.Where(student => q == student.Id.ToString()))
                         {
                             students.Students.Remove(student);
-                            WriteL("Student fjernet");
+                            WriteL($"Student {student.Id} fjernet");
                             break;
                         }
                         break;

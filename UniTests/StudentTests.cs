@@ -33,5 +33,19 @@ namespace UniTests
 
             Assert.AreEqual(expected, actutal);
         }
+
+        [Test]
+        public void RemoveStudent()
+        {
+            var st1 = new Student("Jolene", "jolene@gmail.com", 1);
+            var st2 = new Student("John", "john@gmail.com", 2);
+            var st3 = new Student("Christian", "christian@gmail.com", 3);
+
+            var students = new UniStudents(st1, st2, st3);
+
+            var actual = students.RemoveStudent(2);
+
+            Assert.AreEqual("student 2 fjernet", actual);
+        }
     }
 }
