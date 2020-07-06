@@ -8,7 +8,7 @@ namespace MyUniversity
     {
         public List<Course> Courses { get; set; }
 
-        public UniCourses(Course[] courses)
+        public UniCourses(params Course[] courses)
         {
             Courses = new List<Course>(courses);
         }

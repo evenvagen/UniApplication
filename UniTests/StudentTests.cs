@@ -61,5 +61,20 @@ namespace UniTests
             Assert.AreEqual("John(33), john@gmail.com\n\n", actual);
 
         }
+
+        [Test]
+
+        public void AddCourse()
+        {  
+            
+            var co = new Course(101, "Fysikk", 0);
+
+            var st = new Student("John", "john@gmail.com", 33, co);
+
+            var actual = st.StudentCourse(101);
+
+            Assert.AreEqual("101: Fysikk, deltagere: 0\n\n", actual);
+
+        }
     }
 }

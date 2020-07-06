@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 
 namespace MyUniversity
 {
@@ -11,11 +12,24 @@ namespace MyUniversity
         public int Id;
         public List<Course> Courses;
 
-        public Student(string name, string email, int id)
+        public Student(string name, string email, int id, params Course[] courses)
         {
             Name = name;
             Email = email;
             Id = id;
+            Courses = new List<Course>(courses);
+        }
+
+
+        public string StudentCourse(int id)
+        {
+            var i = "";
+            foreach (var course in Courses.Where(c => c.IdCourse == id).ToArray())
+            {
+                if(course.IdCourse == id) Courses.Add(course);
+                i += course.CourseInfo();
+            }
+            return i;
         }
 
 
