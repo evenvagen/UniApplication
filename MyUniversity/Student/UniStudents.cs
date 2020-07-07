@@ -47,5 +47,19 @@ namespace MyUniversity
             }
             return i;
         }
+
+
+        public string AddStudentsToCourses(int id)
+        {
+            var i = "";
+
+            foreach (var student in Students)
+            {
+                i = student.StudentCourse(id);
+            }
+
+            return i;
+        }
+
     }
 }

@@ -27,7 +27,8 @@ namespace MyUniversity
             foreach (var course in Courses.Where(c => c.IdCourse == id).ToArray())
             {
                 if(course.IdCourse == id) Courses.Add(course);
-                i += course.CourseInfo();
+                course.Participants++;
+                i = course.CourseInfo();
             }
             return i;
         }
