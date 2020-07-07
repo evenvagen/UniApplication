@@ -35,7 +35,7 @@ namespace MyUniversity
 
         public string StudentInfo()
         {
-            var studentOutput =  $"{Name}({Id}), {Email} {StudentCourse(101)}\n\n";
+            var studentOutput =  $"{Name}({Id}), {Email}\n\n";
             return studentOutput;
         }
 

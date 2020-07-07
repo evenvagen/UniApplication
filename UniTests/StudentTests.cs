@@ -45,7 +45,7 @@ namespace UniTests
 
             var actual = students.RemoveStudent(8);
 
-            Assert.AreEqual("student 8 fjernet", actual);
+            Assert.AreEqual("John(8) fjernet", actual);
         }
 
         [Test]
