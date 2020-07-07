@@ -28,7 +28,7 @@ namespace MyUniversity
 
         public string RemoveStudent(int id)
         {
-            string i = "";
+            var i = "";
             foreach (var student in Students.Where(s => s.Id == id).ToList())
             {
                 if (student.Id.ToString() == id.ToString()) Students.Remove(student); i =  $"{student.Name}({student.Id}) fjernet";
@@ -38,7 +38,7 @@ namespace MyUniversity
 
         public string FindStudent(int id)
         {
-            string i = "";
+            var i = "";
             foreach (var student in Students.Where(s => s.Id == id).ToList())
             {
                 if (student.Id.ToString() == id.ToString()) i = student.StudentInfo();

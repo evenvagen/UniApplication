@@ -35,7 +35,7 @@ namespace MyUniversity
 
         public string StudentInfo()
         {
-            var studentOutput =  $"{Name}({Id}), {Email}\n\n";
+            var studentOutput =  $"{Name}({Id}), {Email} {StudentCourse(101)}\n\n";
             return studentOutput;
         }
 
@@ -60,7 +60,6 @@ namespace MyUniversity
 
         public static int IdLoop(UniStudents students)
         {
-            
             return students.Students.Count + 1;
         }
 

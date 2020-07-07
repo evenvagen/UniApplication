@@ -22,6 +22,7 @@ namespace UniTests
 
             var actual = st.StudentCourse(101);
 
+
             Assert.AreEqual("101: Fysikk, deltagere: 1\n\n", actual);
 
         }
