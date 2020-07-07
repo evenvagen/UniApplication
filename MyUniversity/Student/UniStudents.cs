@@ -28,13 +28,11 @@ namespace MyUniversity
 
         public string RemoveStudent(int id)
         {
-            string i = "student ";
+            string i = "";
             foreach (var student in Students.Where(s => s.Id == id).ToList())
             {
-                if (student.Id.ToString() == id.ToString()) Students.Remove(student); i +=  $"{student.Id}";
+                if (student.Id.ToString() == id.ToString()) Students.Remove(student); i =  $"{student.Name}({student.Id}) fjernet";
             }
-            i += " fjernet";
-
             return i;
         }
 
@@ -43,7 +41,7 @@ namespace MyUniversity
             string i = "";
             foreach (var student in Students.Where(s => s.Id == id).ToList())
             {
-                if (student.Id.ToString() == id.ToString()) i += student.StudentInfo();
+                if (student.Id.ToString() == id.ToString()) i = student.StudentInfo();
             }
             return i;
         }
