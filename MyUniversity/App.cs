@@ -14,6 +14,7 @@ namespace MyUniversity
                               "'meld av' - meld av en student fra et kurs\n" +
                               "'meld på' - meld en student på et kurs\n" +
                               "'fjern student' - fjern student ved å skrive inn student-Id\n" +
+                              "'cc' fjerner all tekst i konsollet, dataene er fortsatt lagret\n" +
                               "'exit' - avslutt programmet\n");
 
         }
@@ -69,7 +70,7 @@ namespace MyUniversity
                     WriteL(students.FindStudent(q));
                 }
 
-
+                if (command == "cc") Console.Clear();
                 if (command == "exit") break;
             }
 
