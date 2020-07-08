@@ -20,14 +20,14 @@ namespace MyUniversity
         }
 
 
-        public string StudentCourse(int id)
+        public string AddStudentToCourse(int courseId, int studentId)
         {
             var i = "";
-            foreach (var course in Courses.Where(c => c.IdCourse == id).ToArray())
+            foreach (var course in Courses.ToArray())
             {
-                if(course.IdCourse == id) Courses.Add(course);
+                if(course.IdCourse == courseId && Id == studentId) Courses.Add(course);
                 course.Participants++;
-                i = course.CourseInfo();
+                i += $"{Name}({Id}) {course.Name} {course.IdCourse}";
             }
             return i;
         }

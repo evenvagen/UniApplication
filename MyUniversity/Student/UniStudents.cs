@@ -47,13 +47,13 @@ namespace MyUniversity
         }
 
 
-        public string AddStudentsToCourses(int id)
+        public string AddStudentsToCourses(int id, int studentId)
         {
             var i = "";
 
             foreach (var student in Students)
-            {
-                i = student.StudentCourse(id);
+            { 
+                i += student.AddStudentToCourse(id, studentId);
             }
 
             return i;
