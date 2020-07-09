@@ -6,20 +6,19 @@ namespace MyUniversity
 {
     public class Course
     {
-        public int? IdCourse { get; private set; }
+        public int IdCourse { get; set; }
         public string Name { get; private set; }
 
         public int Participants;
 
         public List<Student> Students;
 
-        public Course(int? idCourse, string course, int participants)
+        public Course(int idCourse, string course, int participants)
         {
             IdCourse = idCourse;
             Name = course;
             Participants = participants;
         }
-
 
 
 

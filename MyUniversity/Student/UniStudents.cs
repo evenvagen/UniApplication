@@ -36,6 +36,8 @@ namespace MyUniversity
             return i;
         }
 
+
+
         public string FindStudent(int id)
         {
             var i = "";
@@ -46,18 +48,14 @@ namespace MyUniversity
             return i;
         }
 
-
-        public string AddStudentsToCourses(int id, int studentId)
+        public void CountStudents()
         {
-            var i = "";
-
             foreach (var student in Students)
-            { 
-                i += student.AddStudentToCourse(id, studentId);
+            {
+                student.AddAndCountStudents();
             }
-
-            return i;
         }
+
 
     }
 }

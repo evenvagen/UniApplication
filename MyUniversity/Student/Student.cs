@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 
 namespace MyUniversity
 {
@@ -9,7 +10,7 @@ namespace MyUniversity
         public string Name { get; private set; }
         public string Email { get; private set; }
         public int Id;
-        public List<Course> Courses;
+        public List<Course> Courses { get; set; }
 
         public Student(string name, string email, int id, params Course[] courses)
         {
@@ -20,22 +21,18 @@ namespace MyUniversity
         }
 
 
-        public string AddStudentToCourse(int courseId, int studentId)
-        {
-            var i = "";
-            foreach (var course in Courses.ToArray())
+        public void AddAndCountStudents()
+        { 
+            foreach (var course in Courses)
             {
-                if(course.IdCourse == courseId && Id == studentId) Courses.Add(course);
                 course.Participants++;
-                i += $"{Name}({Id}) {course.Name} {course.IdCourse}";
             }
-            return i;
         }
 
 
         public string StudentInfo()
         {
-            var studentOutput =  $"{Name}({Id}), {Email}\n\n";
+            var studentOutput =  $"{Name}({Id}), {Email}\nMeldt på {Courses.Count} kurs\n\n";
             return studentOutput;
         }
 
@@ -54,13 +51,20 @@ namespace MyUniversity
 
             var email = App.Ask("E-post: ");
 
-            return new Student(name, email, IdLoop(students));
+            return new Student(name, email, IdLoop(students), null);
         }
 
 
         public static int IdLoop(UniStudents students)
         {
-            return students.Students.Count + 1;
+            var i = students.Students.Count + 1;
+
+            foreach (var student in students.Students)
+            {
+                if(i == student.Id) i = new Random().Next(1000);
+            }
+
+            return i;
         }
 
 
