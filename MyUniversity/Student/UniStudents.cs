@@ -48,13 +48,6 @@ namespace MyUniversity
             return i;
         }
 
-        public void CountStudents()
-        {
-            foreach (var student in Students)
-            {
-                student.AddAndCountStudents();
-            }
-        }
 
 
     }

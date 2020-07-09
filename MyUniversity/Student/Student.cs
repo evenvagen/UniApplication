@@ -21,14 +21,6 @@ namespace MyUniversity
         }
 
 
-        public void AddAndCountStudents()
-        { 
-            foreach (var course in Courses)
-            {
-                course.Participants++;
-            }
-        }
-
 
         public string StudentInfo()
         {
@@ -51,7 +43,7 @@ namespace MyUniversity
 
             var email = App.Ask("E-post: ");
 
-            return new Student(name, email, IdLoop(students), null);
+            return new Student(name, email, IdLoop(students));
         }
 
 

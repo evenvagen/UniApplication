@@ -33,8 +33,6 @@ namespace MyUniversity
         {
             while (true)
             {
-                students.CountStudents();
-
 
                 var command = Console.ReadLine();
 

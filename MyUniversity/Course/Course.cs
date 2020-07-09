@@ -21,7 +21,6 @@ namespace MyUniversity
         }
 
 
-
         public string CourseInfo()
         {
             var courseDescription = $"{IdCourse}: {Name}, deltagere: {Participants}\n\n";
