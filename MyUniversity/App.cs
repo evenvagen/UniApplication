@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace MyUniversity
@@ -56,8 +57,8 @@ namespace MyUniversity
 
                     case "fjern student":
                     {
-                       var q = AskNum("Student-id: "); 
-                       WriteL(students.RemoveStudent(q)); 
+                        var q = AskNum("Student-id: ");
+                        WriteL(students.RemoveStudent(q)); 
                        break;
                     }
                         

@@ -59,7 +59,6 @@ namespace MyUniversity
             return $"\n{Name} meldt av {c.Name}\n";
         }
 
-
         public Student CreateStudent(UniStudents students)
         {
             Console.WriteLine("Lag en ny student!");

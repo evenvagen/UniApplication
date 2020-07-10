@@ -12,6 +12,7 @@ namespace MyUniversity
         public int Participants;
 
 
+
         public Course(int idCourse, string course, int participants)
         {
             IdCourse = idCourse;

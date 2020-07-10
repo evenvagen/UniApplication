@@ -31,7 +31,14 @@ namespace MyUniversity
             var i = "";
             foreach (var student in Students.Where(s => s.Id == id).ToList())
             {
-                if (student.Id.ToString() == id.ToString()) Students.Remove(student); i =  $"{student.Name}({student.Id}) fjernet";
+               
+               
+                if (student.Id.ToString() == id.ToString())
+                {
+                    Students.Remove(student);
+                    i =  $"{student.Name}({student.Id}) fjernet";
+                }
+
             }
             return i;
         }
