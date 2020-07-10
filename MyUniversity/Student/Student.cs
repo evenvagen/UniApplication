@@ -34,16 +34,18 @@ namespace MyUniversity
 
         }
 
-        public void AddCourse(Course c)
-        { 
+        public string AddCourse(Course c)
+        {
             Courses.Add(c);
             c.Participants++;
+            return $"\n{Name} meldt på {c.Name}\n";
         }
 
-        public void RemoveCourse(Course c)
+        public string RemoveCourse(Course c)
         {
             Courses.Remove(c);
             c.Participants--;
+            return $"\n{Name} fjernet fra {c.Name}\n";
         }
 
 

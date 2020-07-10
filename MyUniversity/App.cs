@@ -76,14 +76,14 @@ namespace MyUniversity
                     {
                         foreach (var course in courses.Courses.Where(c => c.IdCourse == q2))
                         {
-                             student.AddCourse(course);
+                            WriteL(student.AddCourse(course));
                         }
                        
                     }
                     
                 }
 
-                if (command == "fjern kurs")
+                if (command == "meld av")
                 {
                     var q = AskNum("student-id: ");
                     var q2 = AskNum("Kurs-id: ");
@@ -92,7 +92,7 @@ namespace MyUniversity
                     {
                         foreach (var course in courses.Courses.Where(c => c.IdCourse == q2))
                         {
-                            student.RemoveCourse(course);
+                            WriteL(student.RemoveCourse(course));
                         }
 
                     }
