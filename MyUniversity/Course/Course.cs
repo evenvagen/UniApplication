@@ -11,8 +11,6 @@ namespace MyUniversity
 
         public int Participants;
 
-        public List<Student> Students;
-
         public Course(int idCourse, string course, int participants)
         {
             IdCourse = idCourse;

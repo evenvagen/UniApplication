@@ -34,6 +34,9 @@ namespace MyUniversity
             while (true)
             {
 
+                
+
+
                 var command = Console.ReadLine();
 
                 switch (command)
@@ -62,6 +65,37 @@ namespace MyUniversity
                     case "vis kurs": WriteL(courses.ShowAllCourses()); break;
 
                     case "vis studenter": WriteL(students.ListStudents()); break;
+                }
+
+                if (command == "meld på")
+                {
+                    var q = AskNum("student-id: ");
+                    var q2 = AskNum("Kurs-id: ");
+
+                    foreach (var student in students.Students.Where(s => s.Id == q))
+                    {
+                        foreach (var course in courses.Courses.Where(c => c.IdCourse == q2))
+                        {
+                             student.AddCourse(course);
+                        }
+                       
+                    }
+                    
+                }
+
+                if (command == "fjern kurs")
+                {
+                    var q = AskNum("student-id: ");
+                    var q2 = AskNum("Kurs-id: ");
+
+                    foreach (var student in students.Students.Where(s => s.Id == q))
+                    {
+                        foreach (var course in courses.Courses.Where(c => c.IdCourse == q2))
+                        {
+                            student.RemoveCourse(course);
+                        }
+
+                    }
                 }
 
 

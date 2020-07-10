@@ -34,6 +34,18 @@ namespace MyUniversity
 
         }
 
+        public void AddCourse(Course c)
+        { 
+            Courses.Add(c);
+            c.Participants++;
+        }
+
+        public void RemoveCourse(Course c)
+        {
+            Courses.Remove(c);
+            c.Participants--;
+        }
+
 
         public Student CreateStudent(UniStudents students)
         {
