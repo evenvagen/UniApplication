@@ -94,7 +94,6 @@ namespace MyUniversity
                         {
                             WriteL(student.RemoveCourse(course));
                         }
-
                     }
                 }
 

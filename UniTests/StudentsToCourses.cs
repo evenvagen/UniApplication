@@ -33,8 +33,40 @@ namespace UniTests
 
             var actual = student.RemoveCourse(course);
 
-            Assert.AreEqual("\nJoe fjernet fra Naturfag\n", actual);
+            Assert.AreEqual("\nJoe meldt av Naturfag\n", actual);
+        }
 
+        [Test]
+
+        public void DuplicateAdd()
+        {
+            var course = new Course(102, "Naturfag", 0);
+            var student = new Student("Joe", "joe@gmail.com", 1, course);
+
+            var actual = student.AddCourse(course);
+
+            Assert.AreEqual("Studenten er allerede meldt på dette kurset", actual);
+        }
+
+
+        [Test]
+
+        public void CountParticipants()
+        {
+            var co2 = new Course(102, "Biologi", 2);
+            
+            var st2 = new Student("John", "john@gmail.com", 2,  co2);
+            var st3 = new Student("Christian", "christian@gmail.com", 3, co2);
+
+            st3.RemoveCourse(co2);
+
+            st2.RemoveCourse(co2);
+
+            st3.AddCourse(co2);
+
+            var actual = co2.Participants;
+
+            Assert.AreEqual(1, actual);
         }
 
     }

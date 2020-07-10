@@ -14,7 +14,7 @@ namespace UniTests
         public void OneStudent()
         {
             var student = new Student("Jolene", "jolene@gmail.com", 1);
-            var expected = "Jolene(1), jolene@gmail.com\n\n";
+            var expected = "Jolene(1), jolene@gmail.com\nMeldt på 0 kurs\n\n";
             var actutal = student.StudentInfo();
             Assert.AreEqual(expected,actutal);
         }
@@ -28,8 +28,8 @@ namespace UniTests
 
             var students = new UniStudents(st1, st2, st3);
             var actutal = students.ListStudents();
-            var expected = "Jolene(1), jolene@gmail.com\n\n" + "John(2), john@gmail.com\n\n" +
-                           "Christian(3), christian@gmail.com\n\n";
+            var expected = "Jolene(1), jolene@gmail.com\nMeldt på 0 kurs\n\n" + "John(2), john@gmail.com\nMeldt på 0 kurs\n\n" +
+                           "Christian(3), christian@gmail.com\nMeldt på 0 kurs\n\n";
 
             Assert.AreEqual(expected, actutal);
         }
@@ -58,7 +58,7 @@ namespace UniTests
 
             var actual = students.FindStudent(33);
 
-            Assert.AreEqual("John(33), john@gmail.com\n\n", actual);
+            Assert.AreEqual("John(33), john@gmail.com\nMeldt på 0 kurs\n\n", actual);
 
         }
 

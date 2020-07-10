@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Reflection.PortableExecutable;
 
@@ -34,18 +35,28 @@ namespace MyUniversity
 
         }
 
+
         public string AddCourse(Course c)
         {
-            Courses.Add(c);
-            c.Participants++;
+            if (!Courses.Contains(c))
+            {
+                Courses.Add(c);
+                c.Participants++;
+            }
+            else return "Studenten er allerede meldt på dette kurset";
             return $"\n{Name} meldt på {c.Name}\n";
+            
         }
 
         public string RemoveCourse(Course c)
         {
-            Courses.Remove(c);
-            c.Participants--;
-            return $"\n{Name} fjernet fra {c.Name}\n";
+            if (Courses.Contains(c))
+            {
+                Courses.Remove(c);
+                c.Participants--;
+            }
+            else return "Studenten er ikke meldt på dette kurset";
+            return $"\n{Name} meldt av {c.Name}\n";
         }
 
 
