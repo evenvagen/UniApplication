@@ -26,19 +26,18 @@ namespace MyUniversity
             return i;
         }
 
-        public string RemoveStudent(int id)
+        public string RemoveStudents(int id)
         {
             var i = "";
             foreach (var student in Students.Where(s => s.Id == id).ToList())
             {
-               
-               
+                
                 if (student.Id.ToString() == id.ToString())
                 {
                     Students.Remove(student);
+
                     i =  $"{student.Name}({student.Id}) fjernet";
                 }
-
             }
             return i;
         }

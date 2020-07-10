@@ -43,7 +43,7 @@ namespace UniTests
 
             var students = new UniStudents(st1, st2, st3);
 
-            var actual = students.RemoveStudent(8);
+            var actual = students.RemoveStudents(8);
 
             Assert.AreEqual("John(8) fjernet", actual);
         }

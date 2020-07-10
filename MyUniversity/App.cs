@@ -58,8 +58,10 @@ namespace MyUniversity
                     case "fjern student":
                     {
                         var q = AskNum("Student-id: ");
-                        WriteL(students.RemoveStudent(q)); 
-                       break;
+                        WriteL(students.RemoveStudents(q)); 
+                        
+                        
+                        break;
                     }
                         
                     

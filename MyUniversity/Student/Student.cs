@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
@@ -58,6 +59,7 @@ namespace MyUniversity
             else return "Studenten er ikke meldt på dette kurset";
             return $"\n{Name} meldt av {c.Name}\n";
         }
+
 
         public Student CreateStudent(UniStudents students)
         {

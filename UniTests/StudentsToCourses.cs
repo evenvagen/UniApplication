@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using NUnit.Framework;
 using MyUniversity;
 using NuGet.Frameworks;
@@ -53,20 +54,14 @@ namespace UniTests
 
         public void CountParticipants()
         {
-            var co2 = new Course(102, "Biologi", 2);
-            
-            var st2 = new Student("John", "john@gmail.com", 2,  co2);
+            var co2 = new Course(102, "Biologi", 1);
             var st3 = new Student("Christian", "christian@gmail.com", 3, co2);
 
             st3.RemoveCourse(co2);
 
-            st2.RemoveCourse(co2);
-
-            st3.AddCourse(co2);
-
             var actual = co2.Participants;
 
-            Assert.AreEqual(1, actual);
+            Assert.AreEqual(0, actual);
         }
 
     }
