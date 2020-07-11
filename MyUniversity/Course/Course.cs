@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace MyUniversity
@@ -9,21 +10,20 @@ namespace MyUniversity
         public int IdCourse { get; set; }
         public string Name { get; private set; }
 
-        public int Participants;
+        public List<Student> Students;
 
 
-
-        public Course(int idCourse, string course, int participants)
+        public Course(int idCourse, string course, params Student[] students)
         {
             IdCourse = idCourse;
             Name = course;
-            Participants = participants;
+            Students = new List<Student>(students);
         }
 
 
         public string CourseInfo()
         {
-            var courseDescription = $"{IdCourse}: {Name}, deltagere: {Participants}\n\n";
+            var courseDescription = $"{IdCourse}: {Name}, deltagere: {Students.Count}\n\n";
             return courseDescription;
         }
 

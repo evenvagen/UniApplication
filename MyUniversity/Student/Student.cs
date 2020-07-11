@@ -37,28 +37,30 @@ namespace MyUniversity
         }
 
 
-        public string AddCourse(Course c)
+        public string AddCourse(Course c, Student s)
         {
             if (!Courses.Contains(c))
             {
                 Courses.Add(c);
-                c.Participants++;
+                c.Students.Add(s);
             }
             else return "Studenten er allerede meldt på dette kurset";
             return $"\n{Name} meldt på {c.Name}\n";
             
         }
 
-        public string RemoveCourse(Course c)
+        public string RemoveCourse(Course c, Student s)
         {
             if (Courses.Contains(c))
             {
                 Courses.Remove(c);
-                c.Participants--;
+                c.Students.Remove(s);
             }
             else return "Studenten er ikke meldt på dette kurset";
             return $"\n{Name} meldt av {c.Name}\n";
         }
+
+
 
 
         public Student CreateStudent(UniStudents students)
@@ -84,6 +86,7 @@ namespace MyUniversity
 
             return i;
         }
+
 
 
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 
 namespace MyUniversity
 {
@@ -57,10 +58,13 @@ namespace MyUniversity
 
                     case "fjern student":
                     {
+                       
                         var q = AskNum("Student-id: ");
-                        WriteL(students.RemoveStudents(q)); 
-                        
-                        
+                        foreach (var student in students.Students.Where(s => s.Id == q))
+                        {
+                            courses.RemoveAllCourses(student);
+                        }
+                        WriteL(students.RemoveStudents(q));
                         break;
                     }
                         
@@ -79,7 +83,7 @@ namespace MyUniversity
                     {
                         foreach (var course in courses.Courses.Where(c => c.IdCourse == q2))
                         {
-                            WriteL(student.AddCourse(course));
+                            WriteL(student.AddCourse(course, student));
                         }
                        
                     }
@@ -95,7 +99,7 @@ namespace MyUniversity
                     {
                         foreach (var course in courses.Courses.Where(c => c.IdCourse == q2))
                         {
-                            WriteL(student.RemoveCourse(course));
+                            WriteL(student.RemoveCourse(course, student));
                         }
                     }
                 }

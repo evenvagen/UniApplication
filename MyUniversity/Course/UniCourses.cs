@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace MyUniversity
@@ -23,6 +24,16 @@ namespace MyUniversity
 
             return i;
         }
+
+        public void RemoveAllCourses(Student s)
+        {
+            foreach (var c in Courses)
+            {
+                c.Students.Remove(s);
+            }
+            
+        }
+
 
     }
 }
