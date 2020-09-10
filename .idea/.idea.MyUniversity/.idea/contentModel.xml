@@ -41,8 +41,8 @@
             </e>
           </e>
         </e>
+        <e p="StudentTest.cs" t="Include" />
         <e p="TestProject1.csproj" t="IncludeRecursive" />
-        <e p="UnitTest1.cs" t="Include" />
       </e>
       <e p="UniTests" t="IncludeRecursive">
         <e p="UniTests.csproj" t="IncludeRecursive" />

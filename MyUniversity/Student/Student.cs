@@ -46,7 +46,6 @@ namespace MyUniversity
             }
             else return "Studenten er allerede meldt på dette kurset";
             return $"\n{Name} meldt på {c.Name}\n";
-            
         }
 
         public string RemoveCourse(Course c, Student s)
