@@ -32,20 +32,21 @@
       </e>
       <e p="MyUniversity.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="TestProject1" t="IncludeRecursive">
+      <e p="UniTests" t="IncludeRecursive">
+        <e p="UniTests.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UniversityTest" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
+        <e p="CourseTest.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
-              <e p="TestProject1.AssemblyInfo.cs" t="Include" />
+              <e p="UniversityTest.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
         <e p="StudentTest.cs" t="Include" />
-        <e p="TestProject1.csproj" t="IncludeRecursive" />
-      </e>
-      <e p="UniTests" t="IncludeRecursive">
-        <e p="UniTests.csproj" t="IncludeRecursive" />
+        <e p="UniversityTest.csproj" t="IncludeRecursive" />
       </e>
     </e>
     <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />

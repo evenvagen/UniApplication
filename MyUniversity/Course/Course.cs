@@ -23,8 +23,8 @@ namespace MyUniversity
 
         public string CourseInfo()
         {
-            var courseDescription = $"{IdCourse}: {Name}, deltagere: {Students.Count}\n\n";
-            return courseDescription;
+            return $"{IdCourse}: {Name}, deltagere: {Students.Count}\n\n";
+            
         }
 
 

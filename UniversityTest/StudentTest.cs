@@ -1,14 +1,11 @@
 using MyUniversity;
 using NUnit.Framework;
 
-namespace TestProject1
+namespace UniversityTest
 {
     public class Tests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
+        
 
         [Test]
         public void StudentTest()
