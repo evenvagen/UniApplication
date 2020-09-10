@@ -22,15 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e266a740-398c-4530-a1c0-a718a2b30033" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/UniversityTest/CourseTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UniversityTest/StudentTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MyUniversity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyUniversity/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MyUniversity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyUniversity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyUniversity.sln" beforeDir="false" afterPath="$PROJECT_DIR$/MyUniversity.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyUniversity/Course/Course.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyUniversity/Course/Course.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestProject1/StudentTest.cs" beforeDir="false" />
-    </list>
+    <list default="true" id="e266a740-398c-4530-a1c0-a718a2b30033" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,7 +87,7 @@
       <updated>1599726758063</updated>
       <workItem from="1599726783017" duration="1895000" />
       <workItem from="1599740982095" duration="3903000" />
-      <workItem from="1599761167240" duration="608000" />
+      <workItem from="1599761167240" duration="715000" />
     </task>
     <servers />
   </component>
